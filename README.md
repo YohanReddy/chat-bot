@@ -1,5 +1,3 @@
-Certainly, here's the Markdown code for your README.md file:
-
 ```markdown
 # Django Project
 
