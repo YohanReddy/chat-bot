@@ -30,6 +30,3 @@ python manage.py runserver
 
 The application should now be accessible at `http://127.0.0.1:8000/` in your web browser.
 
-## Contributing
-
-If you'd like to contribute to this project, feel free to fork the repository and submit a pull request.
