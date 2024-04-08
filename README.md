@@ -1,4 +1,3 @@
-```markdown
 # Django Project
 
 Welcome to my Django project! This project serves as an assignment task for an intern position at iGebra.
