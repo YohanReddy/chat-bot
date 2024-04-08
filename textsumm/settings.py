@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'mydb',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb://localhost:27017/',
+            'host': 'mongodb+srv://yohanreddy1:yohanreddy1@mydb.7zcudbs.mongodb.net/',
         }
     }
 }

@@ -9,36 +9,103 @@
 </head>
 
 <body class="bg-gray-100 p-8">
-    <div class="max-w-md mx-auto bg-white rounded-md p-6 shadow-md">
-        <h1 class="text-2xl font-bold mb-4">Text Generation</h1>
-        <div id="chat-container" class="mb-4 space-y-4 overflow-y-auto max-h-96">
-            <!-- Display Previous Generated Texts -->
-<!-- Display Previous Messages -->
-{% for message in previous_messages %}
-<div class="bg-gray-200 p-4 rounded-md mb-4">
-    <div>
-        <p><strong>Input:</strong> {{ message.input }}</p>
-    </div>
-    <div>
-        <p><strong>Generated Text:</strong> {{ message.generated_text }}</p>
-    </div>
-</div>
-{% endfor %}
-<!-- End Display Previous Messages -->
-
-
-
-            <!-- End Display Previous Generated Texts -->
-
-            <!-- User Input Form -->
-            <form action="" method="post" id="myForm" class="flex items-center">
-                {% csrf_token %}
-                <input name="input" type="text" id="textInput" class="w-full border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-300" placeholder="Enter text...">
-                <button value="submit" type="submit" class="ml-2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Generate</button>
-            </form>
-            <!-- End User Input Form -->
+    <div class="flex h-screen antialiased text-gray-800">
+        <div class="flex flex-row h-full w-full overflow-x-hidden">
+          <div class="flex flex-col flex-auto h-full p-6">
+            <div
+              class="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4"
+            >
+              <div class="flex flex-col h-full overflow-x-auto mb-4">
+                <div class="flex flex-col h-full">
+                    <div class="col-start-1 col-end-8 p-3 rounded-lg">
+    
+    
+                    {% for message in previous_messages %}
+    
+                    <div class="col-start-6 col-end-13 p-3 rounded-lg">
+                      <div class="flex items-center justify-start flex-row-reverse">
+                        <div
+                          class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
+                        >
+                          Yo
+                        </div>
+                        <div
+                          class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
+                        >
+                          <div> {{ message.input }}</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-start-1 col-end-8 p-3 rounded-lg">
+                      <div class="flex flex-row items-center">
+                        <div
+                          class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
+                        >
+                          Bot
+                        </div>
+                        <div
+                          class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                        >
+                          <div> {{ message.generated_text }}</div>
+                        </div>
+                      </div>
+                    </div>
+    
+                    {% endfor %}
+    
+    
+    
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
+              >
+                <div class="flex-grow ml-4">
+                  <div class="relative w-full">
+                  <form action="" method="post" id="myForm" class="flex items-center">
+                    {% csrf_token %}
+                    <input
+                      name="input" type="text" id="textInput"
+                      class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
+                    />
+                  </div>
+                </div>
+                <div class="ml-4">
+    
+    
+                  <button
+                    value="submit" type="submit"
+                    class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
+                  >
+                    <span>Send</span>
+                    <span class="ml-2">
+                      <svg
+                        class="w-4 h-4 transform rotate-45 -mt-px"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                        ></path>
+                      </svg>
+                    </span>
+                  </button>
+                </form>
+    
+    
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 </body>
 
 </html>
