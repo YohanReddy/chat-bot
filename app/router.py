@@ -2,7 +2,7 @@
 
 class DatabaseRouter:
     def db_for_read(self, model, **hints):
-        if model._meta.app_label == 'textsumm':  # Replace 'your_app_name' with the name of your Django app
+        if model._meta.app_label == 'textsumm': 
             return 'mongo'
         return 'default'
 
